@@ -3,7 +3,7 @@ function [Sum, Cout] = ripple_carry_adder1(A, B, Cin ,N)
     % N = 16;
 
     % Input validation
-    if A < 0 || A > 2^N - 1 || B < 0 || B > 2^N - 1
+    if any(A < 0) || any(A > 2^N - 1) || any(B < 0) || any(B > 2^N - 1)
         error('Inputs A and B must be in the range.');
     end
     if ~ismember(Cin, [0, 1])

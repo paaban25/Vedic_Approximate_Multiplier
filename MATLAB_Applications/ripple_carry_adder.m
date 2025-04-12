@@ -1,6 +1,6 @@
 function [Sum, Cout] = ripple_carry_adder(A, B, Cin, model, N)
     % Input validation
-    if A < 0 || A >= 2^N || B < 0 || B >= 2^N || ~ismember(Cin, [0,1])
+    if any(A < 0) || any(A >= 2^N) || any(B < 0) || any(B >= 2^N) || ~ismember(Cin, [0,1])
         error('Invalid input. A and B must be in [0, 2^N-1], Cin must be 0 or 1.');
     end
 
