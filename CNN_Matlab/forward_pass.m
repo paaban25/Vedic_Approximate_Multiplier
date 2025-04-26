@@ -1,7 +1,7 @@
 function output = forward_pass(input_image,filters_conv1,filters_bias1,filters_conv2,filters_bias2,stride_conv,max_pool_size,stride_pooling,weights_dense1,bias_dense1,weights_dense2,bias_dense2)
     
     %First Convolution Layer
-    conv1_output=conv2D_layer(input_image,filters_conv1,filters_bias1,stride_conv);
+    conv1_output=conv2D_layer(input_image,filters_conv1,filters_bias1,stride_conv)
     relu1_output=relu_activation(conv1_output);
     maxPooling1_output=MaxPooling2D_layer(relu1_output,max_pool_size,stride_pooling);
 
@@ -20,12 +20,12 @@ function output = forward_pass(input_image,filters_conv1,filters_bias1,filters_c
     %Second Dense Layer 
     dense2_output=Dense_layer(relu3_output,weights_dense2,bias_dense2,1);
     final_activation_output=sigmoid_activation(dense2_output);
-    output = final_activation_output;
+    output = final_activation_output
     if(final_activation_output>0.5)
         disp("It is a CAT!!");
+
     else 
         disp("It is a DOG!!");
     end
-    
 
 end
